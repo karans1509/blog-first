@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-25T23:43:11-08:00</updated><id>http://localhost:4000/</id><title type="html">ClumsyCoders</title><subtitle>A blog for the developers taking baby steps into this amazing field of Technology!</subtitle><entry><title type="html">Cross Platform Mobile App Development</title><link href="http://localhost:4000/blogs/cross-platform-mobile-app-development/" rel="alternate" type="text/html" title="Cross Platform Mobile App Development" /><published>2018-01-20T11:37:13-08:00</published><updated>2018-01-20T11:37:13-08:00</updated><id>http://localhost:4000/blogs/Mobile-App-Development</id><content type="html" xml:base="http://localhost:4000/blogs/cross-platform-mobile-app-development/">&lt;script src=&quot;https://use.fontawesome.com/23741fa98b.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+&lt;div&gt;
+&lt;img src=&quot;/assets/post1.jpeg&quot; alt=&quot;Main image&quot;&gt; 
+&lt;/div&gt;
+&lt;p&gt;
+When we hear about mobile App development, the first thing that comes into our mind is iOS and Android. For some time, the only way to develop apps for Android devices was to build Native apps using Java on Android Studio. Similarly, for building iOS apps, one needed to know Objective C or more recently Swift. In addition to that, you could develop iOS apps only on a Mac. 
+&lt;/p&gt;
+
+&lt;p&gt;
+Also, to release one app, you needed to develop for different platforms which consumed a lot of time as well as forced developers to choose one platform initially and then build on that. Thankfully, the scenario has changed a lot in these past few years. With the advent of Apache Cordova and many other similar frameworks, developers now have the liberty to develop one application with a code base that will work on all the supported devices. Lets have a glance at some of these frameworks -
+&lt;/p&gt; 
+
+&lt;ol&gt;
+  &lt;li&gt; 
+    &lt;h4&gt;&lt;a href=&quot;https://cordova.apache.org/&quot;&gt;Apache Cordova&lt;/a&gt;&lt;/h3&gt; 
+    &lt;p&gt;Apache Cordova is a cross platform mobile app development framework originally created by Nitobi. It was later acquired by Adobe. This framework allows us to create mobile apps that work across various mobile operating systems, without being an expert in Native programming. We can create app using HTML5/CSS and JavaScript and Cordova will wrap our code into a native container and provide us access to native functionality such as camera, gps etc. Getting started with Cordova is very easy as they provide a lot of starter templates and you can learn more about it &lt;a href=&quot;https://cordova.apache.org/docs/en/latest/guide/overview/index.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h4&gt;&lt;a href=&quot;https://www.xamarin.com/&quot;&gt;Xamarin&lt;/a&gt; &lt;/h4&gt;
+    &lt;p&gt;Xamarin is a framework, owned by Microsoft, which helps in creating native mobile apps using C# programming language. Xamarin provides access to all the Native APIs. Xamarin also provides an online training program called &lt;a href=&quot;https://www.xamarin.com/university&quot;&gt;Xamarin University&lt;/a&gt;, for people who are serious about considering development on this platform, where you can learn mobile development using Xamarin in depth.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;h4&gt;&lt;a href=&quot;https://facebook.github.io/react-native/&quot;&gt;React Native&lt;/a&gt;&lt;/h4&gt;
+    &lt;p&gt;React is a very popular JavaScript library developed at Facebook, as we all know. We can use the power of React and JavaScript to build native mobile apps as well. With React Native, you can code a part of your app natively and the rest of the part using React Native, which provides a lot of flexibility to the developers. The number of jobs that require expertise in React Native has been ever increasing so its a great skill to invest on. To &lt;a href=&quot;https://facebook.github.io/react-native/docs/getting-started.html&quot;&gt;get started&lt;/a&gt;, you can install their CLI tool which takes care of all the configuration stuff and lets you focus on the actual development.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;h4&gt;&lt;a href=&quot;https://ionicframework.com&quot;&gt;Ionic&lt;/a&gt;&lt;/h4&gt;
+    &lt;p&gt;Ionic is another amazing framework that allows you to develop mobile apps for all platforms. Ionic uses Angular behind the scenes and one needs to be proficient in TypeScript to build Ionic apps. Ionic is an implementation of Apache Cordova. It uses cordova plugins to provide native functionality to your apps. Ionic also provides a tool called Ionic Pro which helps in deploying and testing your apps. Lets look at Ionic in more detail and develop a simple app.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2&gt;Todo List App using Ionic&lt;/h2&gt;
+&lt;p&gt;We are going to develop a simple todo list mobile app using Ionic. I will also cover how to use Ionic Pro to deploy your app on the cloud. In this post I assume that you have basic knowledge about Angular 4 development. Otherwise I would suggest you to go through some tutorials on Angular first. So lets get started.&lt;/p&gt;
+&lt;h3&gt;Setup&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Make sure node.js is installed on your system. You can check using following command. 
+    &lt;/p&gt;
+    &lt;p&gt;
+         &lt;!-- &lt;img src=&quot;/assets/Capture.PNG&quot; alt=&quot;&quot;&gt;  --&gt;
+         &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;&lt;span class=&quot;gp&quot;&gt;    $&lt;/span&gt;  node &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;span class=&quot;go&quot;&gt;         &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+        &lt;/p&gt; 
+   &lt;p&gt;If not, you can download it from &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js website&lt;/a&gt;.&lt;/p&gt;  
+  &lt;/li&gt;
+  &lt;li&gt; 
+    &lt;p&gt;Now, we will install Ionic and Cordova CLI globally.
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;!-- &lt;img src=&quot;/assets/Capture2.PNG&quot; alt=&quot;&quot;&gt; --&gt;
+        &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;&lt;span class=&quot;gp&quot;&gt;    $&lt;/span&gt;  npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; ionic cordova
+&lt;span class=&quot;go&quot;&gt;         &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;/p&gt;
+
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;We will use ionic cli to create a blank app called todolist. Ionic provides various starter templates. Here we chose the blank one. Once you enter the command, CLI will ask you for some basic input. Type 'y' if it asks for installing Ionic pro.
+    &lt;/p&gt;
+    &lt;p&gt;&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_sesion&quot; data-lang=&quot;shell_sesion&quot;&gt;    $  ionic start todo blank
+          &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt; 
+    &lt;/p&gt;
+      &lt;!-- &lt;img src=&quot;/assets/Capture3.PNG&quot; alt=&quot;&quot;&gt; --&gt;   
+  &lt;/li&gt;
+
+&lt;/ol&gt;
+
+&lt;h3&gt;Lets Code!&lt;/h3&gt;
+&lt;p&gt;If you go through the file structure, you will see that it is very similar to an Angular web app file structure. There is a little bit change in terminology, which is understandable. So our 'components' become 'pages', 'service' becomes 'provider'.
+&lt;/p&gt;
+&lt;p&gt; If you go to the pages folder under src, you will see home. This directory includes the files for our home page. Now open home.html and change 'ion-title' to Todo List and remove the content inside 'ion-content'. Then add the following code.&lt;/p&gt;
+&lt;p&gt; 
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-header&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-navbar&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-title&amp;gt;&lt;/span&gt;
+          Todo List
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-title&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-navbar&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-header&amp;gt;&lt;/span&gt;
+    
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-content&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;padding&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-list&amp;gt;&lt;/span&gt;
+    
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-item&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-label&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;floating&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;New Item&lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-label&amp;gt;&lt;/span&gt;
+              &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;item&quot;&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;[(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ngModel&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)]=&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/ion-input&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-item&amp;gt;&lt;/span&gt;
+    
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ion-button&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;)=&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;addItem&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;()&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Add&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+        
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-list&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-list&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;ion-item&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;ngFor=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;let item of items&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+            
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-item&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-list&amp;gt;&lt;/span&gt;
+    
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ion-content&amp;gt;&lt;/span&gt;
+    
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  We have added two lists here. The first one has an input where you will enter a new item that needs to be added to the list, and a button which will add the item to the list below. The ngModel directive provides us with two-way data-binding so the input value can be accessed by our typescript file.
+&lt;/p&gt;
+&lt;p&gt;
+  The second list has an Angular ngFor directive which will loop over all the list items and add them to the page.
+  Now, we have the basic structure of the app, so lets move on to the home.ts file and add the functionality.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/core'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NavController&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ionic-angular'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;selector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'page-home'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;templateUrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'home.html'&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;HomePage&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[];&lt;/span&gt;
+  &lt;span class=&quot;nl&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;any&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+  &lt;span class=&quot;kd&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kr&quot;&gt;public&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;navCtrl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NavController&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+   
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;addItem&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+     &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;add item: &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;items&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;item&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;We just added the 'addItem' function to our typescript file which pushes the data that it got from the input on the homepage. Now, if you click on the Add button, our second list will be populated with the newly added list item. To see your app in action, on the command line, go to your project root folder and run - &lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ionic lab
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt; A new browser window will open and you can then test your app. Now to deploy your app, you need to create an account on &lt;a href=&quot;https://ionicframework.com/pro&quot;&gt;Ionic pro&lt;/a&gt;. You can create a new app on the console. Once you have done that, go to your command line and type -
+&lt;br&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;ionic &lt;span class=&quot;nb&quot;&gt;link&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;br&gt;
+  You will see your app that you created on the Ionic pro console. Select that one and enter. Now your app has been linked to your Ionic pro account. Go to your project's root folder on your command line and run
+  &lt;br&gt;&lt;br&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell&quot; data-lang=&quot;shell&quot;&gt;  &lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;git push ionic master
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;Your app is now deployed on the Ionic cloud. If you follow the steps on the Ionic pro console, you can easily test the app on a real device using the app id and Ionic View app.&lt;/p&gt;
+
+&lt;p&gt;So, this is pretty much it. There is a whole lot of stuff that can be done by Ionic so dont forget to explore the &lt;a href=&quot;https://ionicframework.com/docs/components/&quot;&gt;Ionic documentation&lt;/a&gt;. &lt;br&gt;&lt;br&gt;
+   Thanks a lot for reading!&lt;/p&gt;
+
+&lt;script &gt;
+
+$(document).ready( function() {
+    
+    $('.site-header').css('display', 'none');
+
+    var social = $('.social-media-list');
+    $('.icon--twitter').parent().parent().remove();
+    var email = $('&lt;li&gt;&lt;a href=&quot;https://linkedin.com/in/karansaini1509&quot;&gt;&lt;span class=&quot;icon fa fa-linkedin-square&quot;&gt;&lt;/span&gt;&lt;span class=&quot;username&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;');
+    social.append(email);
+    
+
+    $('.social-media-list .username').text('');
+
+    var image = $('&lt;img class=&quot;author&quot; src=&quot;../../assets/author.jpg&quot; alt=&quot;Main image&quot;&gt;');
+
+    $('.post-header').append(image);
+    $('.post-header').append(social);
+
+    $('.site-header').fadeIn(2500);
+    
+    $(window).on('scroll', function(){
+      
+      if($(window).scrollTop() == 0) {
+        console.log('top')
+        $('.site-header').animate({ backgroundColor: &quot;#13293D&quot; }, 300, function(){
+          $('.site-title').css('color', '#fdfdfd');
+          $('.page-link').css('color', '#fdfdfd');
+          console.log('here');
+        });
+        
+      }
+      else {
+        $('.site-header').css('background-color', '#fdfdfd');
+        $('.site-title').css('color', '#13293D')
+        $('.page-link').css('color', '#13293D')
+        
+      }
+    })
+  })
+
+&lt;/script&gt;</content><author><name></name></author><category term="mobile" /><summary type="html">When we hear about mobile App development, the first thing that comes into our mind is iOS and Android. For some time, the only way to develop apps for Android devices was to build Native apps using Java on Android Studio. Similarly, for building iOS apps, one needed to know Objective C or more recently Swift. In addition to that, you could develop iOS apps only on a Mac.</summary></entry></feed>
