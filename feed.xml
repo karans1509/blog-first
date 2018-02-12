@@ -1,4 +1,284 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-25T23:43:11-08:00</updated><id>http://localhost:4000/</id><title type="html">ClumsyCoders</title><subtitle>A blog for the developers taking baby steps into this amazing field of Technology!</subtitle><entry><title type="html">Cross Platform Mobile App Development</title><link href="http://localhost:4000/blogs/cross-platform-mobile-app-development/" rel="alternate" type="text/html" title="Cross Platform Mobile App Development" /><published>2018-01-20T11:37:13-08:00</published><updated>2018-01-20T11:37:13-08:00</updated><id>http://localhost:4000/blogs/Mobile-App-Development</id><content type="html" xml:base="http://localhost:4000/blogs/cross-platform-mobile-app-development/">&lt;script src=&quot;https://use.fontawesome.com/23741fa98b.js&quot;&gt;&lt;/script&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-02-11T17:55:05-08:00</updated><id>http://localhost:4000/</id><title type="html">ClumsyCoders</title><subtitle>A blog for the developers taking baby steps into this amazing field of Technology!</subtitle><entry><title type="html">Incorporating Angular Material into Angular app</title><link href="http://localhost:4000/blogs/angular-material/" rel="alternate" type="text/html" title="Incorporating Angular Material into Angular app" /><published>2018-02-09T11:37:13-08:00</published><updated>2018-02-09T11:37:13-08:00</updated><id>http://localhost:4000/blogs/angular-material-design</id><content type="html" xml:base="http://localhost:4000/blogs/angular-material/">&lt;script src=&quot;https://use.fontawesome.com/23741fa98b.js&quot;&gt;&lt;/script&gt;
+&lt;link href=&quot;https://use.fontawesome.com/releases/v5.0.6/css/all.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;top-icon&quot;&gt;
+&lt;span class=&quot;fab fa-angular&quot; &gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;
+  While developing the front-end for a web app, we might realize that we are using certain UI components quite often. And it's really time consuming to build those components from scratch everytime we require them.
+  Another thing we might notice is that they might look different on different screens, or different browsers. To solve this issue, we are going to look at Angular Material, which is google's material design library developed specifically for Angular.
+&lt;/p&gt;
+&lt;p&gt;
+  Angular material library provides us with ready-to-use components that will work across different browsers and screen sizes. They also provide a lot of themes to choose from, which you can customize accordingly. This library was developed to be used seamlessly with the Angular framework. Next, we will see how to actually use it in a project. For the following demo I am assuming that you have basic knowledge of the Angular framework.
+&lt;/p&gt;
+
+&lt;h3&gt; Setup &lt;/h3&gt;
+&lt;p&gt;
+  In this demo, I will show you how to use different UI components. Since the focus is on the UI components, I won't be building a specific app because then I will be spending most of the time in doing something that is not relevant to the post. It's not possible to cover all the possible components but i will try to cover the ones which could be really useful and could potentially save you a lot of time. You don't need to know anything special to get started. It's exactly similar to creating a basic HTML webpage.
+  So, to get started make sure you have node.js and angular-cli installed on your system. If not, you can download node.js from &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Node.js website&lt;/a&gt;. 
+&lt;/p&gt;
+&lt;p&gt;
+  We will create a new angular app using Angular-cli. 
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;  ng new material-demo
+&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;  &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;material-demo
+&lt;span class=&quot;go&quot;&gt;   &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;
+  Now, let's install angular material libraries as dependencies. 
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;  npm &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--save&lt;/span&gt; @angular/material @angular/cdk
+&lt;span class=&quot;go&quot;&gt;  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Once you install the libraries, just run the app using following command and go to http://localhost:4200 to see it it action. &lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-shell_session&quot; data-lang=&quot;shell_session&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$&lt;/span&gt;  ng serve
+&lt;span class=&quot;go&quot;&gt;  &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Next step is to include a theme. It is needed to provide some core styles to your library. So, go to styles.css in your 'src' folder and add this line at the top. &lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;  &lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&quot;~@angular/material/prebuilt-themes/indigo-pink.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  You can always choose any other theme according to your requirements.
+&lt;/p&gt;
+&lt;p&gt;
+  If you want to use material design icons in your app, then add the following stylesheet to head tag of your index.html file in 'src' folder.
+&lt;/p&gt;
+&lt;p&gt;
+  &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;https://fonts.googleapis.com/icon?family=Material+Icons&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;We are done with the setup. We will now focus on the files present under 'app' folder. To use any material design component, the steps are same. First, you need to import it and include it in the imports array in app.module.ts file. Then, you can go to the desired angular component's html file and include the tag for that UI component. To make sure the animations work properly on all browsers, include the following module in your app.module.ts file.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;    &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BrowserAnimationsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/platform-browser/animations'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;BrowserAnimationsModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;/p&gt;
+  &lt;br&gt;
+  &lt;h3&gt;Adding Menu&lt;/h3&gt;
+  &lt;p&gt;To add a menu, you need to import the following module in your app.module.ts file.&lt;/p&gt;
+  &lt;p&gt;
+      &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;      &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MatMenuModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/material/menu'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+  
+      &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;MatMenuModule&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+      &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;/p&gt;
+  &lt;br&gt;
+  &lt;p&gt;
+    Then in your app.component.html file, add the following code.
+  &lt;/p&gt;
+  &lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;style=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text-align:center&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;container&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mat-button&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;matMenuTriggerFor&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;]=&quot;&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Menu&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-menu&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;menu=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;matMenu&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mat-menu-item&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Home &lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;button&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mat-menu-item&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;About&lt;span class=&quot;nt&quot;&gt;&amp;lt;/button&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-menu&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;/p&gt;
+  &lt;p&gt;
+    We are associating the button with the mat-menu tag by using matMenuTriggerFor directive. You can add more items to the menu and you can also nest another menu inside the outermost one and customize according to your project needs. 
+  &lt;/p&gt;
+  &lt;br&gt;
+  &lt;h3&gt;Adding a Card&lt;/h3&gt;
+  &lt;p&gt;
+    Think of a use case where you need to show various images as well as some text associated with it. For example. an image gallery on an e-commerce website, or a list of users with their profile images. The Card component can be used for such purposes. Let's import this module.
+  &lt;/p&gt;
+  &lt;p&gt;
+      &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;   &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MatCardModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/material/card'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+  &lt;/p&gt;
+  &lt;br&gt;
+  &lt;p&gt;
+   Let's add the below code to the app.component.html file, and then i'll do a walkthrough.
+  &lt;/p&gt;
+  &lt;p&gt;
+      &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;      &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-card&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;profile&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-card-header&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-card-title&amp;gt;&lt;/span&gt;Name&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-card-title&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-card-subtitle&amp;gt;&lt;/span&gt;Designation&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-card-subtitle&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-card-header&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;mat-card-image&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;image url&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;alt=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;photo&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-card-content&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+              short description
+            &lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+          &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-card-content&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-card&amp;gt;&lt;/span&gt;
+      &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+    &lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;
+  MatCard component comes with a lot of helper tags which provide some predefined styles like mat-header, mat-content, mat-title, mat-footer etc. In the above code, my card contains a header where I have specified Name as the title and Designation as sub-title. After that i have an image tag followed by short description. It's always a good idea to have &lt;a href=&quot;https://material.angular.io/components/card/overview&quot;&gt;documentation&lt;/a&gt; open because it gives you a detailed description.
+&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;Adding a Grid List&lt;/h3&gt;
+&lt;p&gt;
+GridList is a great utility that helps you structure your webpage. You don't have to worry about any percentages to set it up. It's very similar to setting up a table. You just need to mention how many columns you need and what should be the height of each row. And it's responsive so you dont have to worry about that. Let's add this module.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;    &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MatGridListModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/material/grid-list'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;MatGridListModule&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;Now, we will add the following code to app.component.ts file.&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-list&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;cols=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;3&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rowHeight=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;1:1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-tile&amp;gt;&lt;/span&gt;1&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-tile&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-tile&amp;gt;&lt;/span&gt;2&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-tile&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-tile&amp;gt;&lt;/span&gt;3&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-tile&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-tile&amp;gt;&lt;/span&gt;4&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-tile&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-tile&amp;gt;&lt;/span&gt;5&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-tile&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-grid-tile&amp;gt;&lt;/span&gt;6&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-tile&amp;gt;&lt;/span&gt;
+      &lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-grid-list&amp;gt;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  As you can see, cols attribute has a value of 3, so we will get two rows of 3 tiles each. You can use these tiles as containers for different kinds of information, for example, an image gallery. The height of each row can also be modified using the rowHeight attribute.
+&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;Adding Icons&lt;/h3&gt;
+&lt;p&gt;
+Adding various kinds of icons to your webpage is very common and Material Design library provides us with a number of icons to choose from. You can search for the icons on this &lt;a href=&quot;https://material.io/icons/&quot;&gt;page&lt;/a&gt;. Again, we will import this module.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;    &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MatIconModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/material/icon'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;MatIconModule&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;p&gt;
+  And now we can add the tag to app.component.ts file.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-icon&amp;gt;&lt;/span&gt;shopping_cart&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-icon&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-icon&amp;gt;&lt;/span&gt;file_upload&lt;span class=&quot;nt&quot;&gt;&amp;lt;/mat-icon&amp;gt;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;
+It's that easy to include icons. Just go to Material Design Icons library and search for required icons and then add them like this. There are many ways to include these icons in your project. For instance, you could even download the svg files and then include them, so it's good to explore and find which method would be more suited to your needs.
+&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;Adding a Progress Spinner&lt;/h3&gt;
+&lt;p&gt;
+Progress spinner is very useful as it gives a sort of feedback to the user that there is some processing going on and the app has not crashed. It can be used while the users credentials are being verified from the database or any such instance. So. let's add it to our app.
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-typescript&quot; data-lang=&quot;typescript&quot;&gt;    &lt;span class=&quot;k&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;MatProgressSpinnerModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'@angular/material/progress-spinner'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;p&quot;&gt;@&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt;NgModule&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;imports&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;MatProgressSpinnerModule&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;
+  Now, let's add the tag. 
+&lt;/p&gt;
+&lt;p&gt;
+    &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;    &lt;span class=&quot;nt&quot;&gt;&amp;lt;mat-spinner&amp;gt;&amp;lt;/mat-spinner&amp;gt;&lt;/span&gt;
+    &lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;
+  You will probably never use this tag in isolation. Instead you can activate the spinner programmatically, when user has entered the credentials and you have made a call to the database. Once you get the result you will deactivate the spinner.
+&lt;/p&gt;
+&lt;br&gt;
+&lt;h3&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;
+  I covered some basic ready-to-use UI components but there is a whole lot of components that you can use in your web app which will save you a lot of time and add some coherent feel to the front-end. You can also use SASS to customize the theme that we added at the beginning. So, it's a very good resource.
+&lt;/p&gt;
+&lt;p&gt;Thanks for reading!&lt;/p&gt;
+
+&lt;script &gt;
+
+  $(document).ready( function() {
+      
+      $('.site-header').css('display', 'none');
+  
+      var social = $('.social-media-list');
+      $('.icon--twitter').parent().parent().remove();
+      var email = $('&lt;li&gt;&lt;a href=&quot;https://linkedin.com/in/karansaini1509&quot;&gt;&lt;span class=&quot;icon fab fa-linkedin&quot;&gt;&lt;/span&gt;&lt;span class=&quot;username&quot;&gt;&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;');
+      social.append(email);
+      
+  
+      $('.social-media-list .username').text('');
+  
+      var image = $('&lt;img class=&quot;author&quot; src=&quot;../../assets/author.jpg&quot; alt=&quot;Main image&quot;&gt;');
+  
+      $('.post-header').append(image);
+      $('.post-header').append(social);
+  
+      $('.site-header').fadeIn(500);
+      
+      $(window).on('scroll', function(){
+        
+        if($(window).scrollTop() == 0) {
+          console.log('top')
+          $('.site-header').animate({ backgroundColor: &quot;#13293D&quot; }, 300, function(){
+            $('.site-title').css('color', '#fdfdfd');
+            $('.page-link').css('color', '#fdfdfd');
+            console.log('here');
+          });
+          
+        }
+        else {
+          $('.site-header').css('background-color', '#fdfdfd');
+          $('.site-title').css('color', '#13293D')
+          $('.page-link').css('color', '#13293D')
+          
+        }
+      })
+    })
+  
+  &lt;/script&gt;</content><author><name></name></author><category term="material" /><category term="design" /><summary type="html"></summary></entry><entry><title type="html">Cross Platform Mobile App Development</title><link href="http://localhost:4000/blogs/cross-platform-mobile-app-development/" rel="alternate" type="text/html" title="Cross Platform Mobile App Development" /><published>2018-01-20T11:37:13-08:00</published><updated>2018-01-20T11:37:13-08:00</updated><id>http://localhost:4000/blogs/Mobile-App-Development</id><content type="html" xml:base="http://localhost:4000/blogs/cross-platform-mobile-app-development/">&lt;script src=&quot;https://use.fontawesome.com/23741fa98b.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;https://code.jquery.com/ui/1.12.1/jquery-ui.js&quot;&gt;&lt;/script&gt;
 &lt;div&gt;
@@ -171,7 +451,7 @@ $(document).ready( function() {
     $('.post-header').append(image);
     $('.post-header').append(social);
 
-    $('.site-header').fadeIn(2500);
+    $('.site-header').fadeIn(500);
     
     $(window).on('scroll', function(){
       

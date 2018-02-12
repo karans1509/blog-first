@@ -374,6 +374,14 @@ pre {
   height: 75px;
   border-radius: 50%; }
 
+#top-icon {
+  text-align: center; }
+
+.fa-angular {
+  text-align: center;
+  color: red;
+  font-size: 15rem; }
+
 /**
  * Syntax highlighting styles
  */
